@@ -14,7 +14,7 @@ export interface Product {
       price: 18.95,
       description: 'Original Cheesecake, our version of a classic',
       category: 'cheesecake',
-      image: './assets/img/png//01.png'
+      image: './assets/img/svg/01.svg'
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export interface Product {
       price: 19.95,
       description: 'Brown butter cheesecake topped with fresh strawberries',
       category: 'cheesecake',
-      image: './assets/img/png//02.png'
+      image: './assets/img/svg/02.svg'
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export interface Product {
       price: 18.95,
       description: 'Dark chocolate cheesecake topped with candied macadamaia nuts',
       category: 'cheesecake',
-      image: './assets/img/png//03.png'
+      image: './assets/img/svg/03.svg'
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ export interface Product {
       price: 19.95,
       description: 'Original cheesecake elegantly decorated with a rose glaze',
       category: 'cheesecake',
-      image: './assets/img/png//04.png'
+      image: './assets/img/svg/04.svg'
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ export interface Product {
       price: 18.95,
       description: 'Cheesecake with caramel glaze and caramel kettle corn',
       category: 'cheesecake',
-      image: './assets/img/png//05.png'
+      image: './assets/img/svg/05.svg'
     },
     {
       id: 6,
@@ -54,7 +54,7 @@ export interface Product {
       price: 19.95,
       description: 'Original Cheesecake topped with fresh pistacio creme and crumbled salted pistacio',
       category: 'cheesecake',
-      image: './assets/img/png//06.png'
+      image: './assets/img/svg/06.svg'
     },
     {
       id: 7,
@@ -62,7 +62,7 @@ export interface Product {
       price: 19.95,
       description: 'Original Apple Pie, our version of a classic',
       category: 'pie',
-      image: './assets/img/png//07.png'
+      image: './assets/img/svg/07.svg'
     },
     {
       id: 8,
@@ -70,7 +70,7 @@ export interface Product {
       price: 18.95,
       description: 'Original Pumpkin Pie, our version of a classic',
       category: 'pie',
-      image: './assets/img/png//08.png'
+      image: './assets/img/svg/08.svg'
     },
     {
       id: 9,
@@ -78,6 +78,6 @@ export interface Product {
       price: 19.95,
       description: 'Original Pecan Pie, our version of a classic',
       category: 'pie',
-      image: './assets/img/png//09.png'
+      image: './assets/img/svg/09.svg'
     }
   ];

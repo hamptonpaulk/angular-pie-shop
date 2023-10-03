@@ -186,7 +186,7 @@ body {
 }
 
 .carousel button {
-    background: url('./assets/img/png//carousel-button-hollow.png') 50% 50% no-repeat;
+    background: url('./assets/img/svg/carousel-button-hollow.svg') 50% 50% no-repeat;
     border: none;
     color: black;
     cursor: pointer;
@@ -198,12 +198,12 @@ body {
 }
 
 .carousel .active-carousel-item {
-    background: url('./assets/img/png//carousel-button-filled.png') 50% 50% no-repeat;
+    background: url('./assets/img/svg/carousel-button-filled.svg') 50% 50% no-repeat;
 }
 
 .focused-message .logo {
     align-items: center;
-    background-image: url('./assets/img/png//badge.png');
+    background-image: url('./assets/img/svg/badge.svg');
     display: flex;
     height: 168px;
     justify-content: center;
