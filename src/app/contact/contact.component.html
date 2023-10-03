@@ -1,0 +1,51 @@
+<section class="main-content">
+    <h2>{{ pageTitle }}<hr /></h2>
+    <div class="contact-wrapper">
+      <div class="image-wrapper">
+        <img src="../assets/img/png//contact.png" alt="image of person sticking a fork in a piece of pie" />
+      </div>
+      <div class="form-wrapper">
+        <h3>We'd Love to Hear from You</h3>
+        <p>Please fill out the form below to let us know how we can help.</p>
+        <fieldset>
+          <form #contactForm="ngForm" (ngSubmit)="submitForm(); contactForm.reset()">
+            <div class="form-group">
+              <label for="full_name">Full Name:</label>
+              <input type="text" id="full_name" name="full_name" class="form-control" [(ngModel)]="contact.full_name" #full_name="ngModel" required>
+              <div *ngIf="full_name.invalid && (full_name.dirty || full_name.touched)" class="alert">
+                <div *ngIf="full_name.errors?.['required']">Name is required.</div>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" [(ngModel)]="contact.email" #email="ngModel" required email>
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                <div *ngIf="email.errors?.['required']">Email is required.</div>
+                <div *ngIf="email.errors?.['email']">Email address is invalid.</div>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="phone_number">Phone Number:</label>
+              <input type="tel" id="phone_number" name="phone_number" class="form-control" [(ngModel)]="contact.phone_number" #phone="ngModel" required>
+              <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert">
+                <div *ngIf="phone.errors?.['required']">Phone Number is required.</div>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="comment">Comment:</label>
+              <textarea id="comment" name="comment" class="form-control" [(ngModel)]="contact.comment" rows="4" #comment="ngModel" required></textarea>
+              <div *ngIf="comment.invalid && (comment.dirty || comment.touched)" class="alert">
+                <div *ngIf="comment.errors?.['required']">Comment is required.</div>
+              </div>
+            </div>
+          
+            <button name="submit" id="submit" type="submit" class="btn btn-primary"
+              [disabled]="!contactForm.form.valid">Submit</button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+  </section>

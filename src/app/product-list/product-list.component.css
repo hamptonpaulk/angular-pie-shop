@@ -1,0 +1,57 @@
+.pie-item {
+    background-color: rgba(253, 246, 246, 1);
+    display: flex;
+    flex-direction: column;
+    width: 421px;
+}
+
+.pie-item div.add-to-cart {
+    align-items: center;
+    background-color: rgba(255, 208, 201, 1);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pie-item div.add-to-cart p {
+    height: 51px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.pie-item div.add-to-cart p a {
+    align-items: center;
+    color: black;
+    display: flex;
+    font-weight: 600;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+}
+
+.pie-item div.pie-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pie-item div.pie-info a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pie-item div.pie-info h4 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 23px 0;
+}
+
+.pie-item div.pie-info p {
+    font-size: 24px;
+    font-weight: 500;
+}

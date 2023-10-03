@@ -1,0 +1,142 @@
+<section class="main-content">
+    <h2>Checkout<hr /></h2>
+    <div class="cart-wrapper">
+        <div class="form-wrapper">
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">   
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name" name="full_name" formControlName="first_name" value="" />
+                <div *ngIf="checkoutForm.controls.first_name.invalid && checkoutForm.controls.first_name.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.first_name.errors?.['minlength']">
+                        First Name must be at least 2 characters long.
+                    </div>
+                    <div *ngIf="checkoutForm.controls.first_name.errors?.['required']">
+                        First Name is required.
+                    </div>
+                </div>
+                
+                <label for="last_name">Last name</label>
+                <input type="text" id="last_name" name="last_name" formControlName="last_name" value="" />
+                <div *ngIf="checkoutForm.controls.last_name.invalid && checkoutForm.controls.last_name.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.last_name.errors?.['minlength']">
+                        Last Name must be at least 2 characters long.
+                    </div>
+                    <div *ngIf="checkoutForm.controls.last_name.errors?.['required']">
+                        Last Name is required.
+                    </div>
+                </div>
+                
+                <label for="address_1">Address 1</label>
+                <input type="text" id="address_1" name="address_1" formControlName="address_1" value="" />
+                <div *ngIf="checkoutForm.controls.address_1.invalid && checkoutForm.controls.address_1.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.address_1.errors?.['required']">
+                        Address One is required.
+                    </div>
+                </div>
+                
+                <label for="address_2">Address 2</label>
+                <input type="text" id="address_2" name="address_2" formControlName="address_2" value="" />
+                
+                <div class="column-wrapper">
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" formControlName="city" value="" />
+                    </div>
+                                  
+                    <div>
+                        <label for="state">State</label>
+                        <select id="state" name="state" formControlName="state">
+                            <option>AZ</option>
+                            <option>FL</option>
+                            <option>UT</option>
+                        </select>
+                    </div>
+                </div>
+                <div *ngIf="checkoutForm.controls.city.invalid && checkoutForm.controls.city.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.city.errors?.['required']">
+                        City is required.
+                    </div>
+                </div>
+                <div *ngIf="checkoutForm.controls.state.invalid && checkoutForm.controls.state.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.state.errors?.['required']">
+                        State is required.
+                    </div>
+                </div>
+                <div class="column-wrapper">
+                    <div>
+                        <label for="zip_code">Postal/Zip code</label>
+                        <input type="text" id="zip_code" name="zip_code" formControlName="zip_code" value="" />
+                    </div>
+                    
+                    <div>
+                        <label for="country">Country</label>
+                        <select id="country" name="country" formControlName="country">
+                            <option>USA</option>
+                            <option>South Africa</option>
+                            <option>Japan</option>
+                        </select>
+                    </div>
+                </div>
+                <div *ngIf="checkoutForm.controls.zip_code.invalid && checkoutForm.controls.zip_code.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.zip_code.errors?.['required']">
+                        Postal Code is required.
+                    </div>
+                </div>
+                <div *ngIf="checkoutForm.controls.country.invalid && checkoutForm.controls.country.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.country.errors?.['required']">
+                        Country is required.
+                    </div>
+                </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" formControlName="email" value="" />
+                <div *ngIf="checkoutForm.controls.email.invalid && checkoutForm.controls.email.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.email.errors?.['required']">
+                        Email is required.
+                    </div>
+                    <div *ngIf="checkoutForm.controls.email.errors?.['email']">
+                        Email is invalid.
+                    </div>
+                </div>
+                
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" formControlName="phone" value="" />
+                <div *ngIf="checkoutForm.controls.phone.invalid && checkoutForm.controls.phone.touched" class="alert alert-danger">
+                    <div *ngIf="checkoutForm.controls.phone.errors?.['required']">
+                        Phone Number is required.
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="subtotal-wrapper">
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <p>Subtotal</p>
+                    <p>{{ subtotal | currency }}</p>
+                </div>
+                <div class="row">
+                    <p>Shipping</p>
+                    <p>
+                        <select name="selectedShipping" [(ngModel)]="selectedShipping" (ngModelChange)="shippingChange()" [ngModelOptions]="{standalone: true}">
+                            <option class="shipping-item" [ngValue]="shipping" *ngFor="let shipping of shippingCosts | async">
+                                <span>{{ shipping.type }}</span> -- 
+                                <span>{{ shipping.price | currency }}</span>
+                            </option>
+                        </select>
+                    </p>
+                </div>
+                <div class="row">
+                    <hr />
+                </div>
+                <div class="row">
+                    <p>Total</p>
+                    <p>{{ total | currency }}</p>
+                </div>
+                <div class="row">
+                    <hr>
+                </div>
+                <div class="row">
+                    <input [disabled]="!checkoutForm.valid" routerLink="/checkout" type="submit" name="submit" id="submit" value="Checkout" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
